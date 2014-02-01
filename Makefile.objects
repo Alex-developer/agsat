@@ -1,0 +1,26 @@
+src/agsat.lo: /home/alex/Develop/PHP/agsat/src/agsat.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/alex/Develop/PHP/agsat $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/alex/Develop/PHP/agsat/src/agsat.c -o src/agsat.lo 
+/src/sgp/sgp.lo: /home/alex/Develop/PHP/agsat//src/sgp/sgp.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/alex/Develop/PHP/agsat $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/alex/Develop/PHP/agsat//src/sgp/sgp.c -o /src/sgp/sgp.lo 
+/src/sgp4/sgp4.lo: /home/alex/Develop/PHP/agsat//src/sgp4/sgp4.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/alex/Develop/PHP/agsat $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/alex/Develop/PHP/agsat//src/sgp4/sgp4.c -o /src/sgp4/sgp4.lo 
+/src/sgp8/sgp8.lo: /home/alex/Develop/PHP/agsat//src/sgp8/sgp8.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/alex/Develop/PHP/agsat $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/alex/Develop/PHP/agsat//src/sgp8/sgp8.c -o /src/sgp8/sgp8.lo 
+/src/sdp4/sdp4.lo: /home/alex/Develop/PHP/agsat//src/sdp4/sdp4.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/alex/Develop/PHP/agsat $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/alex/Develop/PHP/agsat//src/sdp4/sdp4.c -o /src/sdp4/sdp4.lo 
+/src/sdp8/sdp8.lo: /home/alex/Develop/PHP/agsat//src/sdp8/sdp8.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/alex/Develop/PHP/agsat $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/alex/Develop/PHP/agsat//src/sdp8/sdp8.c -o /src/sdp8/sdp8.lo 
+/src/common/get_el.lo: /home/alex/Develop/PHP/agsat//src/common/get_el.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/alex/Develop/PHP/agsat $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/alex/Develop/PHP/agsat//src/common/get_el.c -o /src/common/get_el.lo 
+/src/common/common.lo: /home/alex/Develop/PHP/agsat//src/common/common.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/alex/Develop/PHP/agsat $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/alex/Develop/PHP/agsat//src/common/common.c -o /src/common/common.lo 
+/src/common/basic.lo: /home/alex/Develop/PHP/agsat//src/common/basic.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/alex/Develop/PHP/agsat $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/alex/Develop/PHP/agsat//src/common/basic.c -o /src/common/basic.lo 
+/src/common/deep.lo: /home/alex/Develop/PHP/agsat//src/common/deep.c
+	$(LIBTOOL) --mode=compile $(CC)  -I. -I/home/alex/Develop/PHP/agsat $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/alex/Develop/PHP/agsat//src/common/deep.c -o /src/common/deep.lo 
+$(phplibdir)/agsat.la: ./agsat.la
+	$(LIBTOOL) --mode=install cp ./agsat.la $(phplibdir)
+
+./agsat.la: $(shared_objects_agsat) $(AGSAT_SHARED_DEPENDENCIES)
+	$(LIBTOOL) --mode=link $(CC) $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS) $(LDFLAGS) -o $@ -export-dynamic -avoid-version -prefer-pic -module -rpath $(phplibdir) $(EXTRA_LDFLAGS) $(shared_objects_agsat) $(AGSAT_SHARED_LIBADD)
+
